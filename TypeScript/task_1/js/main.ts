@@ -40,3 +40,24 @@ type printTeacherFunction = (firstName: string, lastName: string) => string;
 const printTeacher: printTeacherFunction = (firstName, lastName) => {
 	return `${firstName[0]}. ${lastName}`;
 };
+
+// Task 4
+
+interface StudentClassConstructor {
+	new (firstName: string, lastName: string): StudentClassMethods;
+}
+interface StudentClassMethods {
+	workOnHomework(): string;
+	displayName(): string;
+}
+
+const StudentClass: StudentClassConstructor = class StudentClass implements StudentClassMethods {
+	constructor(public firstName: string, public lastName: string) {}
+
+	workOnHomework(): string {
+		return 'Currently working';
+	}
+	displayName(): string {
+		return this.firstName;
+	}
+};
