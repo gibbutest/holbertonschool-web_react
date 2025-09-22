@@ -1,3 +1,4 @@
+// Task 5
 interface DirectorInteface {
 	workFromHome(): string;
 	getCoffeeBreak(): string;
@@ -38,10 +39,20 @@ function createEmployee(salary: number): Teacher | Director {
 	return typeof salary === 'number' && salary < 500 ? new Teacher() : new Director();
 }
 
+// Task 6
+
 function isDirector(employee: Teacher | Director): boolean {
 	return employee instanceof Director;
 }
 
 function executeWork(employee: Teacher | Director): string {
 	return employee instanceof Teacher ? employee.workTeacherTasks() : employee.workDirectorTasks();
+}
+
+// Task 7
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects) {
+	return `Teaching ${todayClass}`;
 }
