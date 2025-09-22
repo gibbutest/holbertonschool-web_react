@@ -1,3 +1,4 @@
+// Task 1
 interface Teacher {
 	firstName: string;
 	lastName: string;
@@ -21,6 +22,8 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
+// Task 2
+
 const director1: Directors = {
 	firstName: 'John',
 	lastName: 'Doe',
@@ -29,3 +32,11 @@ const director1: Directors = {
 	numberOfReports: 17,
 };
 console.log(director1);
+
+// Task 3
+
+type printTeacherFunction = (firstName: string, lastName: string) => string;
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+	return `${firstName[0]}. ${lastName}`;
+};
